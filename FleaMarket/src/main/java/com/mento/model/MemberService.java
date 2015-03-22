@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import com.mento.model.MemberDTO;
 import com.mento.model.MemberDAOInterface;
 
+
 @Component("membersservice")
 public class MemberService implements MemberServiceInterface{
 	

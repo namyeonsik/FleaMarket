@@ -17,6 +17,7 @@ public class MemberDAO implements MemberDAOInterface{
 	public int insertMembers(MemberDTO member) {
 		return session.insert("flea.member.insertMember", member);
 	}
+	
 
 	public MemberDTO selectByUser(String mid, String mpwd) {
 		MemberDTO member = null;
