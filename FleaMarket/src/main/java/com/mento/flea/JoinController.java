@@ -1,15 +1,19 @@
 package com.mento.flea;
 
 
-import org.springframework.stereotype.Controller;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import com.mento.model.MemberServiceInterface;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.mento.model.MemberDTO;
+import com.mento.model.MemberServiceInterface;
 
 
 @Controller
@@ -18,11 +22,13 @@ public class JoinController {
 	MemberServiceInterface service;
 
 	@RequestMapping(value = "/join.do", method = RequestMethod.GET)
-	public String joinGet() {
-		return "/join";
+	public ModelAndView joinGet() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/join");
+		return mv;
 	}
-	/*
-	@RequestMapping(value = "/join.do", method = RequestMethod.POST)
+	
+	/*@RequestMapping(value = "/join.do", method = RequestMethod.POST)
 	@Transactional(propagation = Propagation.REQUIRED)
 	public ModelAndView joinPost(MemberDTO member, HttpServletRequest request,
 			HttpSession session) {
@@ -47,12 +53,10 @@ public class JoinController {
 		ModelAndView mv = new ModelAndView();
 		System.out.println(member);
 		System.out.println(member.getMid());
-		MemberDTO memcheck = service.selectByUser(member.getMid(),
-				member.getMpwd());
-		
+		MemberDTO memcheck = service.selectByUser(member.getMid(),member.getpwd());		
 
 		if (memcheck != null) {
-			if (memcheck.getMcheck() == 0) {
+			if (memcheck.getcheck() == 0) {
 				mv.setViewName("members/loginConfirmMain");
 				session.setAttribute("memcheck", memcheck);
 			} else {

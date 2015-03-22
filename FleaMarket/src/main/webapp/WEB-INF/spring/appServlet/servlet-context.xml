@@ -7,6 +7,7 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
@@ -29,7 +30,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.mento.flea" />
+	<context:component-scan base-package="com" />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
@@ -41,22 +42,28 @@
 	</bean>
 	
 	
-<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource" >
-  <property name="driverClass" value="com.mysql.jdbc.Driver" />
-  <property name="url" value="jdbc:mysql://fleamarket.cxl4s2tduaeu.ap-northeast-1.rds.amazonaws.com:3306/" />
-  <property name="username" value="fleamarket" />
-  <property name="password" value="marketmanager" />
-</bean>
-
-<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource" >
+	  <property name="driverClass" value="com.mysql.jdbc.Driver" />
+	  <property name="url" value="jdbc:mysql://fleamarket.cxl4s2tduaeu.ap-northeast-1.rds.amazonaws.com:3306/" />
+	  <property name="username" value="fleamarket" />
+	  <property name="password" value="marketmanager" />
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	  <property name="dataSource" ref="dataSource" />
 	  <property name="mapperLocations" value="classpath*:*Mapper.xml" />
-	  <property name="configLocation" value="classpath:sqlMapConfig.xml"/>
+	  <!-- <property name="configLocation" value="classpath:sqlMapConfig.xml"/> -->
 	</bean>
 	
 	<!-- Spring이 제공하는 MyBatis연동을 위한 sqlSessionTemplate빈 설정 -->
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 	   <constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		p:dataSource-ref="dataSource" />
 
 </beans>
