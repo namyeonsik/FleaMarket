@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="flea.board">
 
-  <select id="selectBycategoty" parameterType="String"
+  <select id="selectBycategory" parameterType="String"
   	resultType="com.mento.model.BoardDTO">
     select * from board
     where category = #{category:VARCHAR}
