@@ -61,8 +61,8 @@
       <input type="text" class="form-control" id="mid">
     </div>
     <div class="form-group">
-      <label for="mpwd">Password:</label>
-      <input type="password" class="form-control" id="mpwd">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd">
     </div>
     <div class="form-group">
       <label for="mname">Name:</label>
@@ -81,11 +81,11 @@
   <form role="form" name="loginfrm" method="post" action="login.do">
     <div class="form-group">
       <label for="mid">Id:</label>
-      <input type="text" class="form-control" id="mid">
+      <input type="text" class="form-control" name="mid">
     </div>
     <div class="form-group">
-      <label for="mpwd">Password:</label>
-      <input type="password" class="form-control" id="mpwd">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" name="pwd">
     </div>
     <button type="submit" class="btn btn-default">login</button>
   </form>
