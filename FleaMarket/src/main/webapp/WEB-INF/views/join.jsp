@@ -34,7 +34,6 @@
 			return true;
 		}
 	}
-
 	function validationlogin() {
 		var mid = loginfrm.mid.value;
 		var pwd = loginfrm.pwd.value;
