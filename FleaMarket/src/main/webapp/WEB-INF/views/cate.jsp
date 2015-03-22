@@ -22,14 +22,14 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
-          <h2><a href="list.do?category='1'">의류</a></h2>
+          <h2><a href="list.do?category=1">의류</a></h2>
           <p>여성 상의</p>
           <p>여성 하의</p>
           <p>남성 상의</p>
           <p>남성 상의</p>
         </div>
         <div class="col-lg-4">
-          <h2><a href="list.do?category='2'">잡화</a></h2>
+          <h2><a href="list.do?category=2">잡화</a></h2>
           <p>운동화</p>
           <p>구두</p>
           <p>가방/패셥잡화</p>
@@ -38,7 +38,7 @@
         </div>
         
         <div class="col-lg-4">
-          <h2><a href="list.do?category='3'">가구/생활</a></h2>
+          <h2><a href="list.do?category=3">가구/생활</a></h2>
           <p>침구/커튼</p>
           <p>조명</p>
           <p>욕실/수납용품</p>
@@ -47,7 +47,7 @@
         </div>
         
         <div class="col-lg-4">
-          <h2><a href="list.do?category='4'">가전</a></h2>
+          <h2><a href="list.do?category=4">가전</a></h2>
           <p>TV/홈씨어터</p>
           <p>주방가전</p>
           <p>냉장고/세탁기/청소기</p>
@@ -55,7 +55,7 @@
         </div>
         
         <div class="col-lg-4">
-          <h2><a href="list.do?category='5'">디지털</a></h2>
+          <h2><a href="list.do?category=5">디지털</a></h2>
           <p>노트북/데스크탑</p>
           <p>카메라/캠코더</p>
           <p>휴대폰/악세사리</p>
@@ -64,7 +64,7 @@
         </div>
         
         <div class="col-lg-4">
-          <h2><a href="list.do?category='6'">스포츠/자동차</a></h2>
+          <h2><a href="list.do?category=6">스포츠/자동차</a></h2>
           <p>자전거/헬스</p>
           <p>골프의류/용품</p>
           <p>등산/캠핑/낚시/보드</p>

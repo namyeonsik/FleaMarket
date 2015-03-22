@@ -25,7 +25,7 @@
 			<c:forEach items="${boardlist}" var="boardlist">
 				<tr>
 					<td class="list-group-item">${boardlist.bid}</td>
-					<td class="list-group-item"><a href="list_view">${boardlist.title}</a></td>
+					<td class="list-group-item"><a href="list_view.do?bid=${boardlist.bid}">${boardlist.title}</a></td>
 					<td class="list-group-item">${boardlist.mid}</td>
 				</tr>
 			</c:forEach>

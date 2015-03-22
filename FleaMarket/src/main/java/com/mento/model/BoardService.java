@@ -15,5 +15,10 @@ public class BoardService implements BoardServiceInterface{
 	public List<BoardDTO> selectBycategory(String category) {
 		return dao.selectBycategory(category);
 	}
+	
+	@Override
+	public BoardDTO selectBybid(int bid) {
+		return dao.selectBybid(bid);
+	}
 
 }
