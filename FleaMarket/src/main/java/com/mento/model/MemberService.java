@@ -7,7 +7,7 @@ import com.mento.model.MemberDTO;
 import com.mento.model.MemberDAOInterface;
 
 
-@Component("membersservice")
+@Component("memberservice")
 public class MemberService implements MemberServiceInterface{
 	
 	@Autowired

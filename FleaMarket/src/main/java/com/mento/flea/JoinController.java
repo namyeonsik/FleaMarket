@@ -28,11 +28,10 @@ public class JoinController {
 		return mv;
 	}
 	
-	/*@RequestMapping(value = "/join.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/join.do", method = RequestMethod.POST)
 	@Transactional(propagation = Propagation.REQUIRED)
-	public ModelAndView joinPost(MemberDTO member, HttpServletRequest request,
-			HttpSession session) {
-		System.out.println("왔니!!");
+	public ModelAndView joinPost(MemberDTO member, HttpServletRequest request,HttpSession session) {
+		System.out.println("왔니!!멤버");
 		
 		ModelAndView mv = new ModelAndView();
 
@@ -40,14 +39,13 @@ public class JoinController {
 			int ret = service.insertMembers(member);
 			System.out.println(ret + "건 입력");
 			System.out.println(member);
-			mv.setViewName("members/member_main");
+			mv.setViewName("/join");
 		} else {
-			mv.setViewName("members/join");
+			mv.setViewName("/join");
 		}
 		return mv;
 	}
 
-	*/
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public ModelAndView loginPost(MemberDTO member, HttpSession session) {
 		ModelAndView mv = new ModelAndView();

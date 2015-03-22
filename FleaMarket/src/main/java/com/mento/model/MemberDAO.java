@@ -19,11 +19,11 @@ public class MemberDAO implements MemberDAOInterface{
 	}
 	
 
-	public MemberDTO selectByUser(String mid, String mpwd) {
+	public MemberDTO selectByUser(String mid, String pwd) {
 		MemberDTO member = null;
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("mid", mid);
-		map.put("pwd", mpwd);
+		map.put("pwd", pwd);
 		member = session.selectOne("flea.member.selectByUser", map);
 		return member;
 	}
