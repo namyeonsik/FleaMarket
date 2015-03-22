@@ -6,7 +6,7 @@
 
   <select id="selectBycategoty" parameterType="map"
   	resultType="com.mento.model.BoardDTO">
-    select * from Board
+    select * from board
     where category = #{category:VARCHAR}
   </select>
 
