@@ -18,12 +18,14 @@
 				<td>글번호 </td>
 				<td>제목 </td>
 				<td>작성자 </td>
+				
+				<br>
 			</tr>
 
 			<c:forEach items="${boardlist}" var="boardlist">
 				<tr>
 					<td class="list-group-item">${boardlist.bid}</td>
-					<td class="list-group-item">${boardlist.title}</td>
+					<td class="list-group-item"><a href="list_view">${boardlist.title}</a></td>
 					<td class="list-group-item">${boardlist.mid}</td>
 				</tr>
 			</c:forEach>
