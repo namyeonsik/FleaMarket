@@ -27,8 +27,10 @@ public class ListController {
 //	   	session = request.getSession();
       	String category = request.getParameter("category");
       	
+      	System.out.println("카테고리"+category);
   		List<BoardDTO> boardlist = service.selectBycategory(category);  		
   		 		
+  		//System.out.println("dddddd"+boardlist.size());
   		mv.addObject("boardlist", boardlist); 
   		mv.setViewName("/list");
   		return mv;
