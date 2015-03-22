@@ -47,27 +47,27 @@ public class JoinController {
 		return mv;
 	}
 
-	
+	*/
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public ModelAndView loginPost(MemberDTO member, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		System.out.println(member);
 		System.out.println(member.getMid());
-		MemberDTO memcheck = service.selectByUser(member.getMid(),member.getpwd());		
+		MemberDTO memcheck = service.selectByUser(member.getMid(),member.getPwd());		
 
-		if (memcheck != null) {
-			if (memcheck.getcheck() == 0) {
+		if (memcheck == null) {
+			/*//if (memcheck.getcheck() == 0) {
 				mv.setViewName("members/loginConfirmMain");
 				session.setAttribute("memcheck", memcheck);
-			} else {
-				mv.setViewName("members/member_main");
+			} else {*/
+				mv.setViewName("/join");
 				mv.addObject("msg", "아이디나 비밀번호를 확인해주세요.");
-			}
-		} else {
-			mv.setViewName("members/member_main");
-			mv.addObject("msg", "아이디나 비밀번호를 확인해주세요.");
+		}
+		 else {
+			mv.setViewName("/cate");
+			//mv.addObject("msg", "아이디나 비밀번호를 확인해주세요.");
 		}
 		return mv;
-	}*/
+	}
 
 }

@@ -20,7 +20,7 @@
 
 	<select id="selectByUser" parameterType="map"
 		resultType="com.mento.model.MemberDTO">
-		select * from Member
+		select * from member
 		where mid = #{mid:VARCHAR} and pwd =
 		#{mpwd:VARCHAR}
 	</select>
