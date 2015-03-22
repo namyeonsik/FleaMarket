@@ -11,7 +11,6 @@
 <!-- Custom styles for this template -->
 <link href="jumbotron.css" rel="stylesheet">
 </head>
-
 <body>
     <div class="jumbotron">
       <div class="container">
