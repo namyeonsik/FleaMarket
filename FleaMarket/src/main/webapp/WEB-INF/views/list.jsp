@@ -14,18 +14,18 @@
 			<h2>채팅방 목록</h2>
 		</div>
 		<div class="boardlist">
-			<ul class="title">				
-				<li>글 번호</li>
-				<li>제목</li>
-				<li>작성자</li>
-			</ul>
+			<tr class="title">				
+				<td>글번호 </td>
+				<td>제목 </td>
+				<td>작성자 </td>
+			</tr>
 
 			<c:forEach items="${boardlist}" var="boardlist">
-				<ul>
-					<li class="list-group-item">${boardlist.bid}</li>
-					<li class="list-group-item">${boardlist.title}</li>
-					<li class="list-group-item">${boardlist.mid}</li>
-				</ul>
+				<tr>
+					<td class="list-group-item">${boardlist.bid}</td>
+					<td class="list-group-item">${boardlist.title}</td>
+					<td class="list-group-item">${boardlist.mid}</td>
+				</tr>
 			</c:forEach>
 		</div>
 
