@@ -10,6 +10,8 @@
 		= 0
 	</select>
 	
+	
+	
 	<insert id="insertMember" parameterType="com.mento.model.MemberDTO">
 		insert into
 		Member(mid,pwd,name,phonenumber)
