@@ -2,20 +2,26 @@ package com.mento.flea;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.mento.model.MemberServiceInterface;
+import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
 public class JoinController {
-	
-/*
 	@Autowired
-	MembersServiceInterface service;
+	MemberServiceInterface service;
 
 	@RequestMapping(value = "/join.do", method = RequestMethod.GET)
 	public String joinGet() {
 		return "/join";
 	}
-
+	/*
 	@RequestMapping(value = "/join.do", method = RequestMethod.POST)
 	@Transactional(propagation = Propagation.REQUIRED)
 	public ModelAndView joinPost(MemberDTO member, HttpServletRequest request,

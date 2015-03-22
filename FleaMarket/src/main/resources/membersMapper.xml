@@ -2,13 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="flea.members">
-
-	<update id="deleteByMid" parameterType="String">
-		update members set mcheck
-		= 1
-		where mid= #{mid:VARCHAR}
-	</update>
+<mapper namespace="flea.member">
 
 	<select id="selectBymid" parameterType="String"
 		resultType="com.mento.model.MemberDTO">
@@ -16,16 +10,16 @@
 		= 0
 	</select>
 	
-	<insert id="insertMembers" parameterType="com.mento.model.MemberDTO">
+	<insert id="insertMember" parameterType="com.mento.model.MemberDTO">
 		insert into
-		Members(mid,mpwd,mname,mphone,memail,mpoint)
-		values(#{mid:VARCHAR},#{mpwd:VARCHAR},#{mname:VARCHAR},#{mphone:VARCHAR},#{memail:VARCHAR},0)
+		Member(mid,pwd,name,phonenumber)
+		values(#{mid:VARCHAR},#{pwd:VARCHAR},#{name:VARCHAR},#{phonenumber:INTEGER})
 	</insert>
 
 	<select id="selectByUser" parameterType="map"
-		resultType="ccom.mento.model.MemberDTO">
-		select * from Members
-		where mid = #{mid:VARCHAR} and mpwd =
+		resultType="com.mento.model.MemberDTO">
+		select * from Member
+		where mid = #{mid:VARCHAR} and pwd =
 		#{mpwd:VARCHAR}
 	</select>
 

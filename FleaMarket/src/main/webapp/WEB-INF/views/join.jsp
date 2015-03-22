@@ -72,6 +72,7 @@
       <label for="mphone">Phone:</label>
       <input type="text" class="form-control" id="mphone">
     </div>
+    <button type="submit" class="btn btn-default">join</button>
   </form>
 </div>
 
@@ -86,6 +87,7 @@
       <label for="mpwd">Password:</label>
       <input type="password" class="form-control" id="mpwd">
     </div>
+    <button type="submit" class="btn btn-default">login</button>
   </form>
 </div>
 
