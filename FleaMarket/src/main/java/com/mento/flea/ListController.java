@@ -1,0 +1,34 @@
+package com.mento.flea;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.mento.model.BoardDTO;
+import com.mento.model.BoardServiceInterface;
+@Controller
+public class ListController {
+   
+	@Autowired
+	BoardServiceInterface service;
+   
+   @RequestMapping(value="/list.do")
+   public ModelAndView listGet1(HttpServletRequest request, HttpSession session, String category){
+      ModelAndView mv = new ModelAndView();
+     
+	   	session = request.getSession();
+    	
+  		List<BoardDTO> boardlist = service.selectBycategory(category);  		
+  		 		
+  		mv.addObject("boardlist", boardlist); 
+  		mv.setViewName("/list");
+  		return mv;
+      
+   }   
+}
