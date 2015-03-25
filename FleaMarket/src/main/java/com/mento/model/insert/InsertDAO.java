@@ -22,7 +22,7 @@ public class InsertDAO implements InsertDAOInterface {
 
 	@Override
 	public int insertBoard(BoardDTO board) {
-		int t = InsertSession.insert("fleamarket.insert.insertBoard");
+		int t = InsertSession.insert("fleamarket.insert.insertBoard", board);
 		return t;
 	}
 

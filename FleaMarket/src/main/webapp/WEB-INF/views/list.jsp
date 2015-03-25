@@ -60,7 +60,7 @@
 			<h1>채팅방 목록</h1>
 		</div>
 		
-		<input type="button" onclick="insert.do" value="글 등록하기" id="btn">
+		<a href="insert.do"><input type="button" value="글 등록하기" id="btn"></a>
 		<div class="boardlist">
 			<ul class="title">				
 				<li class="col1">글번호 </li>

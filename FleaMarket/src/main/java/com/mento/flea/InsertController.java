@@ -27,13 +27,6 @@ public class InsertController {
 	@RequestMapping(value="/insert.do", method=RequestMethod.GET)
 	public String Insert(HttpSession session){		
 		MemberDTO member = (MemberDTO) session.getAttribute("memcheck");
-		/*if(member==null){
-			System.out.println("로그인해야함");
-			return "join";
-		}
-		else{
-			return "insert";
-		}*/
 		return "insert";
 	}
 	
@@ -44,8 +37,7 @@ public class InsertController {
 		System.out.println("-0----------------  "
 	            + board.getPic().getOriginalFilename());
 		}
-	      // books과 notice의 noticeno primarykey를 일치시키기 위해 미리 sequence 가져옴
-	      // 그림파일 업로드 시 파일명을 primarykey로 일치시
+
 	      int nextval = Insertservice.selectBynextVal();
 	      System.out.println("-------------nextval   "+nextval);
 	      if (board.getPic() != null) {
@@ -55,8 +47,7 @@ public class InsertController {
 	         String fileName = file.getOriginalFilename();
 	         fileName = fileName.substring(fileName.length() - 4,
 	               fileName.length());
-	        
-	         // jpg파일이나 gif 파일만 받음
+
 	         if (fileName.equals(".jpg") || fileName.equals(".gif")) {
 	            board.setImage(nextval + fileName);
 	            FileOutputStream fo = null;
@@ -74,20 +65,12 @@ public class InsertController {
 	            }
 	         }
 	         else{
-	            System.out.println("jpg or gif 파일 아님");
+	            System.out.println("jpg or gif ...");
 	         }
 
 	      }
 
-	      
-	      //notice.setNoticeNo(nextval);
-	      //board.setNoticeNo(nextval);			//board id, 시퀀스로 만들어서 가져오기
-	      //notice.setNoticeDate(noticeDate);
-
-//	      String userNick = request.getParameter("userId");
-//	      board.setBid(session.getAttribute("memcheck"));	//사용자 아이디 dto에 저장
-
-	      int noticeRet = Insertservice.insertBoard(board); //board 테이블에 등록
+	      int noticeRet = Insertservice.insertBoard(board); 
 	      System.out.println(noticeRet);
 	      
 		return "redirect:/insert.do";
