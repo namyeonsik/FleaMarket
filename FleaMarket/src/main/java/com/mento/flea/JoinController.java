@@ -65,7 +65,7 @@ public class JoinController {
 		System.out.println(member);
 		System.out.println(member.getMid());
 		MemberDTO memcheck = service.selectByUser(member.getMid(),member.getPwd());		
-
+		session.setAttribute("memcheck", memcheck);
 		if (memcheck == null) {
 				mv.setViewName("/join");
 				mv.addObject("msg", "아이디나 비밀번호를 확인해주세요.");

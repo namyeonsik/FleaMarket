@@ -1,29 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
-<script src="${pageContext.request.contextPath}/resources/socket.io/socket.io.js"></script>
+<script src="/socket.io/socket.io.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script>
   var socket = io.connect('http://localhost:8080');
-  alert("µÊ");
-  // ¼­¹ö¿¡ Á¢¼ÓÇÒ ¶§, »ç¿ëÀÚ¸íÀ» È®ÀÎÇÑ´Ù.
+
+  // ì„œë²„ì— ì ‘ì†í•  ë•Œ, ì‚¬ìš©ìëª…ì„ í™•ì¸í•œë‹¤.
   socket.on('connect', function(){
-    // ¼­¹ö¿¡ ÀÖ´Â adduser ÇÔ¼ö¸¦ È£ÃâÇÏ¸ç, ÇÏ³ªÀÇ ÆÄ¶ó¹ÌÅÍ(promptÀÇ ¹İÈ¯ °ª)¸¦ Àü´ŞÇÑ´Ù
+    // ì„œë²„ì— ìˆëŠ” adduser í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ë©°, í•˜ë‚˜ì˜ íŒŒë¼ë¯¸í„°(promptì˜ ë°˜í™˜ ê°’)ë¥¼ ì „ë‹¬í•œë‹¤
     socket.emit('adduser', prompt("What's your name?"));
   });
 
-  // ¸®½º³Ê: ¼­¹ö¿¡¼­ updatechatÀ» Àü¼ÛÇÒ ¶§¸¶´Ù, ÀÎÀÚ ÇÔ¼ö°¡ ½ÇÇàÇÏ¿© Ã¤ÆÃ ³»¿ëÀ» ¾÷µ¥ÀÌÆ®ÇÑ´Ù
+  // ë¦¬ìŠ¤ë„ˆ: ì„œë²„ì—ì„œ updatechatì„ ì „ì†¡í•  ë•Œë§ˆë‹¤, ì¸ì í•¨ìˆ˜ê°€ ì‹¤í–‰í•˜ì—¬ ì±„íŒ… ë‚´ìš©ì„ ì—…ë°ì´íŠ¸í•œë‹¤
   socket.on('updatechat', function (username, data) {
     $('#conversation').append('<b>'+username + ':</b> ' + data + '<br>');
   });
 
-  // ¸®½º³Ê: ¼­¹ö¿¡¼­ updateusersÀ» Àü¼ÛÇÒ ¶§¸¶´Ù, ÀÎÀÚ ÇÔ¼ö°¡ ½ÇÇàÇÏ¿© »ç¿ëÀÚ ¸ñ·ÏÀ» ¾÷µ¥ÀÌÆ®ÇÑ´Ù.
+  // ë¦¬ìŠ¤ë„ˆ: ì„œë²„ì—ì„œ updateusersì„ ì „ì†¡í•  ë•Œë§ˆë‹¤, ì¸ì í•¨ìˆ˜ê°€ ì‹¤í–‰í•˜ì—¬ ì‚¬ìš©ì ëª©ë¡ì„ ì—…ë°ì´íŠ¸í•œë‹¤.
   socket.on('updateusers', function(data) {
     $('#users').empty();
     $.each(data, function(key, value) {
@@ -31,21 +22,21 @@
     });
   });
 
-  // ÆäÀÌÁö ¿Â·Îµå Ã³¸®
+  // í˜ì´ì§€ ì˜¨ë¡œë“œ ì²˜ë¦¬
   $(function(){
-    // Å¬¶óÀÌ¾ğÆ®¿¡¼­ SEND ¹öÆ°À» Å¬¸¯ÇÒ ¶§
+    // í´ë¼ì´ì–¸íŠ¸ì—ì„œ SEND ë²„íŠ¼ì„ í´ë¦­í•  ë•Œ
     $('#datasend').click( function() {
       var message = $('#data').val();
       $('#data').val('');
-      // ¼­¹ö¿¡¼­ sendchat ÇÔ¼ö¸¦ ½ÇÇàÇÏµµ·Ï ¾Ë·ÁÁÖ¸ç, ÇÏ³ªÀÇ ÆÄ¶ó¹ÌÅÍ¸¦ Àü´ŞÇÑ´Ù
+      // ì„œë²„ì—ì„œ sendchat í•¨ìˆ˜ë¥¼ ì‹¤í–‰í•˜ë„ë¡ ì•Œë ¤ì£¼ë©°, í•˜ë‚˜ì˜ íŒŒë¼ë¯¸í„°ë¥¼ ì „ë‹¬í•œë‹¤
       socket.emit('sendchat', message);
     });
 
-    // Å¬¶óÀÌ¾ğÆ®¿¡¼­ Å°º¸µåÀÇ ¿£ÅÍÅ°¸¦ ÀÔ·ÂÇÒ ¶§
+    // í´ë¼ì´ì–¸íŠ¸ì—ì„œ í‚¤ë³´ë“œì˜ ì—”í„°í‚¤ë¥¼ ì…ë ¥í•  ë•Œ
     $('#data').keypress(function(e) {
       if(e.which == 13) {
         $(this).blur();
-        // SEND ¹öÆ°ÀÇ Å¬¸¯ ÀÌº¥Æ®¸¦ ½ÇÇàÇÑ´Ù
+        // SEND ë²„íŠ¼ì˜ í´ë¦­ ì´ë²¤íŠ¸ë¥¼ ì‹¤í–‰í•œë‹¤
         $('#datasend').focus().click();
       }
     });
@@ -61,5 +52,3 @@
   <input id="data" style="width:200px;" />
   <input type="button" id="datasend" value="send" />
 </div>
-</body>
-</html>
