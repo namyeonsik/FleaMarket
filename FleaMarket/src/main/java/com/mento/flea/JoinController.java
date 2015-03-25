@@ -24,10 +24,20 @@ public class JoinController {
 	@RequestMapping(value = "/join.do", method = RequestMethod.GET)
 	public ModelAndView joinGet() {
 		ModelAndView mv = new ModelAndView();
+		//¹Ù²ÛºÎºÐ
 		mv.setViewName("/join");
-		System.out.println("joinget¿È");
+		System.out.println("join get¿È");
 		return mv;
 	}
+	
+/*	@RequestMapping(value = "/join.do", method = RequestMethod.GET)
+	public String joinGet() {
+		ModelAndView mv = new ModelAndView();
+		//¹Ù²ÛºÎºÐ
+		mv.setViewName("/join");
+		System.out.println("join get¿È");
+		return "redirect:/http://localhost:8080/;
+	}*/
 	
 	@RequestMapping(value = "/join.do", method = RequestMethod.POST)
 	@Transactional(propagation = Propagation.REQUIRED)
