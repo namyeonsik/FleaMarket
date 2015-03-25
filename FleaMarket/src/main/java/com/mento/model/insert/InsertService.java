@@ -20,6 +20,7 @@ public class InsertService implements InsertServiceInterface{
 	@Override
 	public int insertBoard(BoardDTO board) {
 		return Insertdao.insertBoard(board);
+		
 	}
 
 }

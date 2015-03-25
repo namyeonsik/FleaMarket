@@ -9,6 +9,7 @@ import com.mento.model.BoardDTO;
 @Component("Insertdao")
 public class InsertDAO implements InsertDAOInterface {
 
+	
 	@Autowired
 	SqlSession InsertSession;
 

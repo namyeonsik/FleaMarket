@@ -5,4 +5,5 @@ import com.mento.model.BoardDTO;
 public interface InsertDAOInterface {
 	public int selectBynextVal();
 	public int insertBoard(BoardDTO board);
+	
 }

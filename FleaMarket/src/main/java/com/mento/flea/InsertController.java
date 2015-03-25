@@ -79,6 +79,7 @@ public class InsertController {
 
 	      }
 
+	      
 	      //notice.setNoticeNo(nextval);
 	      //board.setNoticeNo(nextval);			//board id, 시퀀스로 만들어서 가져오기
 	      //notice.setNoticeDate(noticeDate);
