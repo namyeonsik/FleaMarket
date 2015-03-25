@@ -55,22 +55,22 @@
 <body>
 <div class="container">
   <h2>Join</h2>
-  <form role="form" action="join.do" onsubmit="validationcheck();" name="myfrm">
+  <form role="form" action="join.do" onsubmit="validationcheck();" method="post" name="myfrm">
     <div class="form-group">
       <label for="mid">Id:</label>
-      <input type="text" class="form-control" id="mid">
+      <input type="text" class="form-control" id="mid" name="mid">
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd">
+      <input type="password" class="form-control" id="pwd" name="pwd">
     </div>
     <div class="form-group">
       <label for="mname">Name:</label>
-      <input type="text" class="form-control" id="mname">
+      <input type="text" class="form-control" id="name" name="name">
     </div>
     <div class="form-group">
       <label for="mphone">Phone:</label>
-      <input type="text" class="form-control" id="mphone">
+      <input type="text" class="form-control" id="phonenumber" name="phonenumber">
     </div>
     <button type="submit" class="btn btn-default">join</button>
   </form>
@@ -78,7 +78,7 @@
 
 <div class="container">
   <h2>login</h2>
-  <form role="form" name="loginfrm" method="post" action="login.do">
+  <form role="form" name="loginfrm" onsubmit="validationlogin();" method="post" action="login.do">
     <div class="form-group">
       <label for="mid">Id:</label>
       <input type="text" class="form-control" name="mid">
