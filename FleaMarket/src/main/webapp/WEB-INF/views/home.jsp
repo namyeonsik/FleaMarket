@@ -6,7 +6,6 @@
 <script type="text/javascript">
 	function move() {
 		location.href("http://localhost:8081/flea/join.do");
-		
 	}
 </script>
 </head>
