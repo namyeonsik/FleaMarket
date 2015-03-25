@@ -4,10 +4,16 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="flea.board">
 
-  <select id="selectBycategoty" parameterType="map"
+  <select id="selectBycategory" parameterType="String"
   	resultType="com.mento.model.BoardDTO">
-    select * from Board
+    select * from board
     where category = #{category:VARCHAR}
+  </select>
+  
+  <select id="selectBybid" parameterType="String"
+  	resultType="com.mento.model.BoardDTO">
+    select * from board
+    where bid = #{bid:INTEGER}
   </select>
 
 

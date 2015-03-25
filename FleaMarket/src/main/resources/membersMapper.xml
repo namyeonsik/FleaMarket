@@ -8,21 +8,18 @@
 		resultType="com.mento.model.MemberDTO">
 		select * from members where mid = #{aa:VARCHAR} and mcheck
 		= 0
-	</select>
-	
-	
+	</select>	
 	
 	<insert id="insertMember" parameterType="com.mento.model.MemberDTO">
-		insert into
-		Member(mid,pwd,name,phonenumber)
+		insert into	member(mid,pwd,name,phonenumber)
 		values(#{mid:VARCHAR},#{pwd:VARCHAR},#{name:VARCHAR},#{phonenumber:INTEGER})
 	</insert>
 
 	<select id="selectByUser" parameterType="map"
 		resultType="com.mento.model.MemberDTO">
-		select * from Member
+		select * from member
 		where mid = #{mid:VARCHAR} and pwd =
-		#{mpwd:VARCHAR}
+		#{pwd:VARCHAR}
 	</select>
 
 </mapper>

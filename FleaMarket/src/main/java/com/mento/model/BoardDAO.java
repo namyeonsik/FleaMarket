@@ -16,5 +16,10 @@ public class BoardDAO implements BoardDAOInterface{
 	public List<BoardDTO> selectBycategory(String category) {
 		return session.selectList("flea.board.selectBycategory", category);
 	}
+	
+	@Override
+	public BoardDTO selectBybid(int bid) {
+		return session.selectOne("flea.board.selectBybid", bid);
+	}
 
 }
