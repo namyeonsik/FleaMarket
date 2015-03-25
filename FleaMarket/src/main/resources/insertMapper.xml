@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="fleamarket.insert">
+
+  <select id="selectBynextVal" resultType="int">
+ select max(bid)+1 from board
+  </select> 
+  <insert id="insertBoard" parameterType="com.mento.model.BoardDTO">
+  insert into board (mid,bid,category,title,btext,image) 
+  values(#{mid},#{bid},#{category},#{title},#{btext},#{image})
+  
+  </insert>
+  
+  
+  </mapper>
