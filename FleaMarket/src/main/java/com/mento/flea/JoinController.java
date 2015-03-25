@@ -57,6 +57,7 @@ public class JoinController {
 		}
 		return mv;
 	}
+	
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public ModelAndView loginPost(MemberDTO member, HttpSession session) {
