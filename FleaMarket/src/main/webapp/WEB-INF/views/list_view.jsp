@@ -14,6 +14,7 @@
 <td class="list-group-item">${boardlist.title}</td>
 </tr>
 </table>
+
 <input type="button" value="화상통화하기" onclick="window.open('chat.do', 'window팝업', 'width=900, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">
 </body>
 </html>
