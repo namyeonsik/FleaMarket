@@ -14,15 +14,15 @@ public class CategoryController {
 	ServiceInterface service;*/
 	
 	@RequestMapping(value="/cate.do", method=RequestMethod.GET)
-	public ModelAndView categoryGet(){
+	public ModelAndView categoryGet(HttpSession session){
 		ModelAndView mv = new ModelAndView();
-		//if(session.getAttribute("memcheck")==null){
-		//	mv.setViewName("notmember");
-	     //    return mv;
-	    //  }else{
+		if(session.getAttribute("memcheck")==null){
+			mv.setViewName("/join");
+	        return mv;
+	     }else{
 	         mv.setViewName("/cate");	         
 	        return mv;
-	    //  }
+	     }
 	}
 	
 	
