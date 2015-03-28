@@ -28,7 +28,7 @@
 	width: 10%;
 }
 </style>
-<title>기부게시판 글쓰기</title>
+<title>게시판 글쓰기</title>
 </head>
 <body>
 

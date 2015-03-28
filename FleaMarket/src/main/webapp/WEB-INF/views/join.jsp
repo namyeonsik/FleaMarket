@@ -51,9 +51,10 @@
 		}
 	}
 </script>
+
 </head>
 <body>
-<div class="container">
+<div class="container" id="joinform" style="width: 40%;float: left;">
   <h2>Join</h2>
   <form role="form" action="join.do" onsubmit="validationcheck();" method="post" name="myfrm">
     <div class="form-group">
@@ -76,7 +77,7 @@
   </form>
 </div>
 
-<div class="container">
+<div class="container" id="loginform" style="width: 40%;float: right; ">
   <h2>login</h2>
   <form role="form" name="loginfrm" onsubmit="validationlogin();" method="post" action="login.do">
     <div class="form-group">

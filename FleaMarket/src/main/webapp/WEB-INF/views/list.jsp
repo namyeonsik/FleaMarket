@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <title>채팅방 목록</title>
 <style type="text/css">
 
@@ -60,7 +63,7 @@
 			<h1>채팅방 목록</h1>
 		</div>
 		
-		<a href="insert.do"><input type="button" value="글 등록하기" id="btn"></a>
+		<a href="insert.do"><input type="button" class="btn btn-default" value="글 등록하기" id="btn" style="margin-left: 65%;"></a>
 		<div class="boardlist">
 			<ul class="title">				
 				<li class="col1">글번호 </li>
