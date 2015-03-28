@@ -9,6 +9,7 @@
 <title>화상채팅</title>
 </head>
 <body>
+<input type="hidden" value="${bid}" id="bid">
 <%@ include file="index.html"%>
 </body>
 </html>
