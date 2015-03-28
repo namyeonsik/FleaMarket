@@ -11,6 +11,7 @@
 <title>게시글 확인</title>
 </head>
 <body>
+
   <table class="table table-hover" style="width: 50%;margin-top: 5%;margin-left: 10%;">
     <thead>
       <tr>
@@ -28,7 +29,6 @@
       <tr>
     </tbody>
   </table>
-
-<input type="button" class="btn btn-default" style="margin-left: 10%" value="거래하기" onclick="window.open('chat.do', 'window팝업', 'width=900, height=400, scrollbars=yes,menubar=no, status=no, toolbar=no, top=100, left=200');">
+<input type="button" style="margin-left: 10%;" class="btn btn-default" value="거래하기" onclick="window.open('chat.do?bid=${boardlist.bid}', 'window팝업', 'width=900, height=400, scrollbars=yes,menubar=no, status=no, toolbar=no, top=100, left=200');">
 </body>
 </html>

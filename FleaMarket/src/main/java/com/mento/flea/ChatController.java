@@ -1,6 +1,6 @@
 package com.mento.flea;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,12 +14,14 @@ public class ChatController {
 	ServiceInterface service;*/
 	
 	@RequestMapping(value="/chat.do", method=RequestMethod.GET)
-	public ModelAndView categoryGet(){
+	public ModelAndView categoryGet(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();
 		//if(session.getAttribute("memcheck")==null){
 		//	mv.setViewName("notmember");
 	     //    return mv;
 	    //  }else{
+			int bid = Integer.parseInt(request.getParameter("bid"));
+			mv.addObject("bid", bid); 
 	         mv.setViewName("/chat");	         
 	        return mv;
 	    //  }
