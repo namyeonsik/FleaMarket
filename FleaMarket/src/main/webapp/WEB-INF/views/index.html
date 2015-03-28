@@ -1,6 +1,5 @@
-
 <script>
-  var socket = io.connect('http://localhost:8081');
+  var socket = io.connect('http://192.168.41.225:8080');
 
   // 서버에 접속할 때, 사용자명을 확인한다.
   socket.on('connect', function(){
@@ -48,6 +47,6 @@
 </div>
 <div style="float:left;width:300px;height:250px;overflow:scroll-y;padding:10px;">
   <div id="conversation"></div>
-  <input id="data" style="width:200px;" />
-  <input type="button" id="datasend" value="send" />
+  <input id="data" style="width:200px;"/>
+  <input type="button" id="datasend" value="send"/>
 </div>

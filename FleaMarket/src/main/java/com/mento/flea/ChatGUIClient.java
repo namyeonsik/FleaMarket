@@ -50,7 +50,7 @@ implements ActionListener,Runnable{
 	
 	/**
 	 * 서버측에 접속기능 담당하는 메소드 작성
-	 * */
+	 **/
 	 public void serverConnection(){
 		 try{
 		 sk = new Socket("192.168.0.219", 7011);
@@ -105,10 +105,7 @@ implements ActionListener,Runnable{
 		}
 	} 
 	
-	
 }
-
-//////////////////////////////
 
 
 
